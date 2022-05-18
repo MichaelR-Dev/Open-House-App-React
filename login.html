@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OpenHouse - Login</title>
+        <style>
+            html{
+                background-color: slategray;
+            }
+
+            html,body{
+                height: 100%;
+            }
+
+            header{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            footer{
+                position:absolute;
+                bottom: -5px;
+                padding: 0;
+                margin: 0;
+                width:100%;
+                height:auto;   /* Height of the footer */
+            }
+
+            footer,button{
+                background-color: transparent;
+                color: rgba(0,0,0,1);
+                font-family: monospace;
+                font-weight: bold;
+                border-style: none;
+                margin-bottom: 5px;
+            }
+
+            footer,button:hover{
+                cursor:pointer;
+            }
+
+            input{
+                width: 222px;
+                height: 25px;
+                margin: auto;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            label{
+                margin: auto;
+                margin-bottom: 0;
+                margin-top: 0;
+                margin-right: 54%;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size:medium;
+                font-weight: bold;
+                padding-top: 22px;
+                padding-bottom: 5px;
+            }
+
+            form,button:active{
+                background-color: rgba(100,100,100,0.4) !important;
+            }
+        </style>
+    </head>
+
+    <body style="display: flex; margin: 0; height: 100%; background-image: url('./images/background3.png')">
+        <div style="display: flex; background-color: whitesmoke; height: 800px; width: 600px; align-self: center; justify-self: center; margin: auto; border-style: solid; border-color: black; border-width: 2px;">
+            <form action="" method="post" style="display: flex; flex-direction: column; background-image: url('./images/woodenPanel1.png'); background-size: 25%; width: 90%; height: 90%; margin: auto; box-shadow: 4px 4px 12px black inset, -4px -4px 12px black inset;">
+                <label style="margin-top: 150px;" for="loginUser">Username:</label>
+                <input type="text" name="Username" id="loginUser" placeholder="Username">
+                <label for="loginPass">Password:</label>
+                <input type="password" name="Password" id="loginPass" placeholder="Password">
+
+                <button id="login" style="background-color: rgba(0,0,0,.1); border-width: 2px; border-color: black; border-style: solid; padding-top: 10px; padding-bottom: 10px; margin-top: 150px; margin-bottom: 15px; width: 230px; align-self: center; font-size: x-large; font-weight: bolder;" type="submit">Login</button>
+                <button style="background-color: rgba(0,0,0,.1); border-width: 2px; border-color: black; border-style: solid; padding-top: 10px; padding-bottom: 10px; margin-bottom: 15px; width: 230px; align-self: center; font-size: x-large; font-weight: bolder;" type="button">Sign Up</button>
+            </form>
+        </div>
+    </body>
+
+    <footer style="background-color: rgba(255,255,255,0);">
+        <div style="display: flex; align-content: center; justify-content: flex-end">
+            <button type="button" style="margin-left: 20px;">about / </button>
+            <button type="button">careers / </button>
+            <button type="button">privacy-policy / </button>
+            <button type="button">terms-of-service / </button>
+            <button type="button">end-user-license-agreement</button>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="./login.js"></script>
+</html>

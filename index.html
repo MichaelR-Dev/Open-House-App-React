@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OpenHouse - A Real Estate Social Platform</title>
+        <style>
+            html{
+                background-color: slategray;
+            }
+
+            html,body{
+                margin: 0; 
+                height: 100%;
+            }
+
+            header{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            .NavLink{
+                align-self: center;
+                border-style: none;
+                cursor: pointer;
+                height: 100%;
+                padding-left: 50px;
+                padding-right: 50px;
+                color: whitesmoke;
+                background-color: rgba(155,155,155,0.4);
+            }
+
+            .NavBar{
+                display: flex; 
+                height: 65px; 
+                max-width: 100%; 
+                padding: 0;
+            }
+
+            #NavBarDiv{
+                width: 100%; 
+                height: 100%; 
+                display: flex;
+            }
+
+            footer{
+                position:absolute;
+                bottom: -5px;
+                padding: 0;
+                margin: 0;
+                width:100%;
+                height:auto;
+                background-color: rgba(0,0,0,0.2);
+            }
+            
+            footer,button{
+                background-color: transparent;
+                color: rgba(0,0,0,0.8);
+                font-family: monospace;
+                font-weight: bold;
+                border-style: none;
+                margin-bottom: 5px;
+            }
+
+            footer,button:hover{
+                cursor:pointer;
+            }
+
+            #footerDiv{
+                display: flex; 
+                align-content: center; 
+                justify-content: flex-end
+            }
+
+            #footerAbout{
+                margin-left: 20px;
+            }
+
+            #searchInput{
+                margin-left: 300px; 
+                padding-left: 25px; 
+                color: black; 
+                background-image: url('./images/woodenPanel1.png'); 
+                background-size: contain; 
+                border-style: double; 
+                border-color: white; 
+                border-width: 1px; 
+                width: 400px; 
+                height: 90%;
+            }
+
+            #searchButton{
+                margin-left: 0; 
+                height: 100%; 
+                margin-right: 10px; 
+                margin-bottom: 0; 
+                background-color: rgba(255,255,255,.2); 
+                border-style: solid; 
+                border-color: rgba(155,155,155,1); 
+                border-width: 1px;
+            }
+
+            #imgBanner{
+                width: auto;
+                height: auto;
+                padding-right: 45px;
+                padding-left: 20px;
+                cursor: pointer;
+            }
+
+            #imgBanner:active{
+                box-shadow: 0 0 3px black inset, 0 0 3px black inset;
+            }
+
+            #bodyDiv{
+                display: flex; 
+                width: 100%; 
+                height: 100%; 
+                align-content: space-between; 
+                justify-content: space-between; 
+                background-image: url('./images/background3.png'); 
+                background-size:200%;
+            }
+
+            .column{
+                display: flex;
+                width: 200px;
+                height: auto;
+
+                padding-top: 60px;
+            }
+
+            #col-1{
+                background-color: rgba(155, 155, 155, .7);
+                box-shadow: 4px 4px 12px black;
+                width: 279px;
+                flex-direction: column;
+                padding-top: 0;
+                z-index: 1;
+
+                background-image: url('./images/woodenPanel1.png'); 
+                background-size: 22%;
+            }
+            #col-2{
+                background-color: rgba(155,155,155,0.4);
+                width: auto;
+                flex-grow: 1;
+            }
+            #col-3{
+                background-color: rgba(155,155,155,0.4);
+                width: 500px;
+            }
+
+            .LeftPanel{
+                align-self: center;
+                padding-bottom: 25px;
+                padding-top: 25px;
+                margin-bottom: 0;
+                margin-right: auto;
+                padding-left: 22px; 
+                font-size: large;
+                font-weight: bold;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                width: 100%;
+                text-align: left;
+
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+
+                /*
+                    Introduced in IE 10.
+                    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+                */
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            .LeftPanel:hover{
+                background-color: rgba(0,0,0,0.4);
+            }
+
+            .LeftPanel:active{
+                background-color: rgba(100,100,100,0.4) !important;
+            }
+
+            #logout{
+                margin-top: auto; 
+                margin-bottom: 22px; 
+                border-top: 2px solid black
+            }
+
+            #ProfileLeftPanel{
+                align-self: center; 
+                padding-bottom: 25px; 
+                padding-top: 25px; 
+                margin-right: auto; 
+                padding-left: 22px; 
+                font-size: large; 
+                font-weight: bold; 
+                font-family: Verdana, Geneva, Tahoma, sans-serif; 
+                width: 100%; 
+                text-align: left;
+            }
+
+            #profile{
+                display: flex; 
+                margin: 0; 
+                width: 100%; 
+                height: fit-content; 
+                border-bottom: 2px solid black; 
+                padding-bottom: 15px;
+            }
+
+            #profile:hover{
+                cursor: pointer;
+            }
+
+            #profile:active{
+                box-shadow: 2px 2px 12px black inset, -2px -2px 12px black inset;
+            }
+
+            #profileUsername{
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+
+                /*
+                    Introduced in IE 10.
+                    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+                */
+                -ms-user-select: none;
+                user-select: none;
+
+                font-family:Verdana, Geneva, Tahoma, sans-serif; 
+                align-self: center; 
+                justify-self: flex-end; 
+                margin-left: 15px; 
+                margin-top: 35px;
+            }
+
+            #profilePic{
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+
+                /*
+                    Introduced in IE 10.
+                    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+                */
+                -ms-user-select: none;
+                user-select: none;
+
+                border-radius: 50%; 
+                border-style: solid; 
+                border-color: white; 
+                border-width: 2px; 
+                background-color: darkslategray; 
+                display: inline-block; 
+                height: 50px; 
+                width: 50px; 
+                margin-top: 15px; 
+                margin-left: 10px;
+            }
+
+
+            @media only screen and (max-width: 1080px) {
+                #imgBanner{
+                    width: 0;
+                    height: 0;
+                }
+            }
+
+        </style>
+    </head>
+
+    <header>
+        <div class="NavBar">
+            <div class="NavBarDiv">
+                <input class="NavLink" id="searchInput" placeholder="Search OpenHouse... (@username/topic/location)">
+                <button class="NavLink" id="searchButton" type="button" href='./feed.html'>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <body>
+        <div id='bodyDiv'>
+            <div class="column" id="col-1">
+                <div id="profile">
+                    <img id="profilePic" unselectable="on" src="images/woodenPanel1.png">
+                    <h3 id="profileUsername" unselectable="on">@</h3>
+                </div>
+                <button type="button" class="LeftPanel" id="ProfileLeftPanel">Profile</button>
+                <button type="button" class="LeftPanel">Notifications</button>
+                <button type="button" class="LeftPanel">Recommended</button>
+                <button type="button" class="LeftPanel">Compass</button>
+                <button type="button" class="LeftPanel">Settings</button>
+                <button id="logout" type="button" class="LeftPanel">Logout</button>
+            </div>
+
+            <div class="column" id="col-2">
+                <h1 style="margin-left: 40px; font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;">feed</h1>
+            </div>
+
+            <div class="column" id="col-3">
+                <h1 style="margin-left: 10px; font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;">compass</h1>
+            </div>
+        </div>
+    </body>
+
+    <footer>
+        <div id='footerDiv'>
+            <button type="button" id='footerAbout'>about / </button>
+            <button type="button">careers / </button>
+            <button type="button">privacy-policy / </button>
+            <button type="button">terms-of-service / </button>
+            <button type="button">end-user-license-agreement</button>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="./index.js"></script>
+</html>
