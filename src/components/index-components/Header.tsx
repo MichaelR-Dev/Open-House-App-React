@@ -8,7 +8,7 @@ export function NavBar (props: INavBarProps) {
     <div className="NavBarDiv">
         <form action=''>
             <input className="NavLink" id="searchInput" placeholder="Search OpenHouse... (@username/topic/location)"/>
-            <button className="NavLink" id="searchButton" type="button">Search</button>
+            <button className="NavLink" id="searchButton" type="submit">Search</button>
         </form>
     </div>
   );
