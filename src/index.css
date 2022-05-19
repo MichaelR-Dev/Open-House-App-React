@@ -70,7 +70,7 @@ footer,button{
 
 #altButton{
     color: rgba(0,0,0,0.8);
-    margin-top: auto;
+    margin-bottom: auto;
     top: auto;
 }
 
@@ -142,16 +142,14 @@ footer,button,#altButton:hover{
 
 .column{
     display: flex;
-    width: 200px;
     height: 100%;
-
-    padding-top: 5%;
 }
 
 #col-1{
     background-color: rgba(155, 155, 155, .7);
     box-shadow: 4px 4px 12px black;
     width: 279px;
+    height: 100%;
     flex-direction: column;
     padding-top: 0;
     z-index: 1;
@@ -164,10 +162,10 @@ footer,button,#altButton:hover{
 #col-2{
     background-color: rgba(155,155,155,0.2);
     width: auto;
-    padding-bottom: 4%;
     flex-grow: 1;
     background-image: url('./images/background3.png'); 
-    background-size: cover;
+    background-position: left;
+    background-size: 400%;
     background-repeat: no-repeat;
     background-color: rgba(155,255,155,0.1);
     background-blend-mode: color-dodge;
@@ -180,7 +178,6 @@ footer,button,#altButton:hover{
     box-shadow: -4px -4px 12px black;
     background-blend-mode: color-dodge;
     width: 25%;
-    padding-bottom: 4%;
     z-index: 10;
 }
 
@@ -227,15 +224,19 @@ footer,button,#altButton:hover{
 
 #logout{ 
     padding-bottom: auto;
+    background-color: rgba(0,0,0,0.2);
     border-top: 2px solid black;
     background-image: url('./images/woodenPanel1.png');
     background-blend-mode: color-dodge;
     background-size: 22%;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
 }
 
 #logout:hover{
-    background-blend-mode: color;
-    background-color: rgba(155,155,155,.5);
+    background-blend-mode: color-dodge;
+    background-color: rgba(255,0,0,.5);
 }
 
 #ProfileLeftPanel{
@@ -254,10 +255,12 @@ footer,button,#altButton:hover{
 #profile{
     display: flex; 
     margin: 0; 
-    width: 100%; 
+    max-width: 100%; 
     height: fit-content; 
+    flex-direction: column;
     border-bottom: 2px solid black; 
     padding-bottom: 15px;
+    background-color: rgba(0,0,0,0.2);
     background-image: url('./images/woodenPanel1.png');
     background-blend-mode: color-dodge;
     background-size: 22%;
@@ -282,12 +285,18 @@ footer,button,#altButton:hover{
     */
     -ms-user-select: none;
     user-select: none;
+    color: black;
 
-    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     align-self: center; 
-    justify-self: flex-end; 
-    margin-left: 15px; 
-    margin-top: 35px;
+    justify-self: flex-end;
+    width: 100%;
+    padding: 0;
+    padding-top: 2%;
+    margin: 0;
+    font-size: 115%;
+    text-align: center;
+    word-break: break-all;
 }
 
 #profilePic{
@@ -303,15 +312,16 @@ footer,button,#altButton:hover{
     user-select: none;
 
     border-radius: 50%; 
-    border-style: solid; 
-    border-color: white; 
+    border-style: double; 
+    border-color: black; 
     border-width: 2px; 
     background-color: darkslategray; 
     display: inline-block; 
-    height: 50px; 
-    width: 50px; 
-    margin-top: 15px; 
-    margin-left: 10px;
+    height: 100%; 
+    width: 30%; 
+    margin-top: 5%; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
