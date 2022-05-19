@@ -1,21 +1,31 @@
 import { render } from '@testing-library/react';
 import background from '../../images/woodenPanel1.png';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const newPostStyle = {
-    background: 'aliceblue',
-    fontSize: '0.7vw',
-    height: '3%',
-    width: '10%',
-    marginTop: '1%',
-    marginLeft: '63%',
-    marginRight: 'auto'
-}
-
-export interface SubHeaderProps {}
-export function SubHeader(props: SubHeaderProps){
+export interface FeedRootProps {}
+export function FeedRoot(props: FeedRootProps){
 
     return(
-        <button style={newPostStyle}>Create Post</button>
+        <div id='FeedRoot'>
+            <form id='feedForm' action=''>
+                <input id="searchInput" placeholder="Search OpenHouse... (@username/topic/location)"/>
+                <button id="searchButton" type="submit"><FontAwesomeIcon icon={faSearch}/> Search</button>
+            </form>
+            <NewPost/>
+        </div>
+    )
+}
+
+export interface NewPostProps {}
+export function NewPost(props: NewPostProps){
+
+    return(
+        <div id='newPostDiv'>
+            <form>
+                <button type='submit'>Create Post</button>
+            </form>
+        </div>
     )
 }

@@ -1,3 +1,5 @@
+import { faAddressCard, faSearch, faSearchMinus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 
 export interface INavBarProps {
@@ -6,10 +8,6 @@ export interface INavBarProps {
 export function NavBar (props: INavBarProps) {
   return (
     <div className="NavBarDiv">
-        <form action=''>
-            <input className="NavLink" id="searchInput" placeholder="Search OpenHouse... (@username/topic/location)"/>
-            <button className="NavLink" id="searchButton" type="submit">Search</button>
-        </form>
     </div>
   );
 }

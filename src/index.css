@@ -14,17 +14,6 @@ header,body,#root,.App,App{
     width: 100%;
 }
 
-.NavLink{
-    align-self: center;
-    border-style: none;
-    cursor: pointer;
-    height: 100%;
-    padding-left: 50px;
-    padding-right: 50px;
-    color: whitesmoke;
-    background-color: rgba(155,155,155,0.4);
-}
-
 .NavBar{
     position: absolute;
     display: flex; 
@@ -39,14 +28,6 @@ header,body,#root,.App,App{
     width: 100%; 
     height: 100%;
     display: flex;
-}
-
-.NavBarDiv > form{
-    margin-top: 1%;
-    margin-left: 11%;
-    width: 100%;
-    height: 50%;
-    padding: 0;
 }
 
 footer{
@@ -88,9 +69,19 @@ footer,button,#altButton:hover{
     margin-left: 20px;
 }
 
+#feedForm{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin-top: 8vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 4vh;
+}
+
 #searchInput{
-    margin-left: 20%; 
-    padding-left: 3%;
+    margin: 0;
+    padding-left: 5%;
     color: black; 
     background-image: url('./images/woodenPanel1.png'); 
     background-color: rgba(155,155,155,.5);
@@ -99,16 +90,18 @@ footer,button,#altButton:hover{
     border-style: solid; 
     border-color: black; 
     border-width: 1px; 
-    width: 20%; 
-    height: 90%;
+    width: 70vh; 
+    height: 100%;
 }
 
 #searchButton{
-    margin-left: 0; 
+    color: black;
+    margin: auto;
+    padding: 0;
+    width: 20vh;
     height: 100%; 
-    margin-right: 10px; 
-    margin-bottom: 0; 
-    background-color: rgba(155,215,155,.4); 
+    background-color: seashell; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #searchButton:active{
@@ -133,10 +126,11 @@ footer,button,#altButton:hover{
     height: 100%; 
     align-content: space-between; 
     justify-content: space-between; 
-    background-image: url('./images/background3.png'); 
-    background-size:400%;
+
+    background-image: url('./images/gradientBackground.jpg');
+    background-size: cover;
     background-position: bottom;
-    background-color: rgba(155,255,155,0.1);
+    background-color: rgba(0,255,255,0.1);
     background-blend-mode: color-dodge;
 }
 
@@ -146,7 +140,7 @@ footer,button,#altButton:hover{
 }
 
 #col-1{
-    background-color: rgba(155, 155, 155, .7);
+    background-color: rgba(155, 155, 155, .1);
     box-shadow: 4px 4px 12px black;
     width: 279px;
     height: 100%;
@@ -154,7 +148,8 @@ footer,button,#altButton:hover{
     padding-top: 0;
     z-index: 1;
 
-    background-image: url('./images/woodenPanel1.png');
+    /*background-image: url('./images/woodenPanel1.png');*/
+    opacity: 1;
     background-blend-mode: color-dodge;
     background-size: 22%;
 }
@@ -163,16 +158,35 @@ footer,button,#altButton:hover{
     background-color: rgba(155,155,155,0.2);
     width: auto;
     flex-grow: 1;
-    background-image: url('./images/background3.png'); 
-    background-position: left;
-    background-size: 400%;
+    background-image: url('./images/background8.jpg'); 
+    background-position: top;
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: rgba(155,255,155,0.1);
     background-blend-mode: color-dodge;
+    overflow-y: hidden;
+}
+
+#FeedRoot{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#newPostDiv{
+    background-color: whitesmoke;
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 60%;
 }
 
 #col-3{
-    background-image: url(./images/woodenPanel1.png);
+    /*background-image: url(./images/woodenPanel1.png);*/
     background-size: 22%;
     background-color:rgba(155, 155, 155, .7);
     box-shadow: -4px -4px 12px black;
@@ -196,9 +210,9 @@ footer,button,#altButton:hover{
     margin-bottom: 0;
     margin-right: auto;
     padding-left: 22px; 
-    font-size: large;
+    font-size: x-large;
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     text-align: left;
 
@@ -222,15 +236,14 @@ footer,button,#altButton:hover{
     background-color: rgba(100,100,100,0.4) !important;
 }
 
-#logout{ 
+#logout{
     padding-bottom: auto;
-    background-color: rgba(0,0,0,0.2);
     border-top: 2px solid black;
-    background-image: url('./images/woodenPanel1.png');
-    background-blend-mode: color-dodge;
+    /*background-image: url('./images/woodenPanel1.png');*/
     background-size: 22%;
     padding-left: 0;
     padding-right: 0;
+    font-size: x-large;
     text-align: center;
 }
 
@@ -247,7 +260,7 @@ footer,button,#altButton:hover{
     padding-left: 22px; 
     font-size: large; 
     font-weight: bold; 
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
     width: 100%; 
     text-align: left;
 }
@@ -260,9 +273,7 @@ footer,button,#altButton:hover{
     flex-direction: column;
     border-bottom: 2px solid black; 
     padding-bottom: 15px;
-    background-color: rgba(0,0,0,0.2);
-    background-image: url('./images/woodenPanel1.png');
-    background-blend-mode: color-dodge;
+    /*background-image: url('./images/woodenPanel1.png');*/
     background-size: 22%;
 }
 
@@ -287,14 +298,14 @@ footer,button,#altButton:hover{
     user-select: none;
     color: black;
 
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     align-self: center; 
     justify-self: flex-end;
     width: 100%;
     padding: 0;
     padding-top: 2%;
     margin: 0;
-    font-size: 115%;
+    font-size: 150%;
     text-align: center;
     word-break: break-all;
 }
