@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# OpenHouse - A Real Estate Social Media Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made solely by Michael Reynolds [GitHub](https://www.github.com/MichaelRPortfolio) and bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
