@@ -2,13 +2,15 @@ html{
     background-color: slategray;
 }
 
-html,body,#root,.App,App{
+html,body,#root,.App{
     margin: 0; 
     height: 100%;
+    overflow: hidden;
 }
 
-header,body,#root,.App,App{
+header,body,#root,.App{
     position: absolute;
+    display: flex;
     top: 0;
     left: 0;
     width: 100%;
@@ -17,27 +19,36 @@ header,body,#root,.App,App{
 .NavBar{
     position: absolute;
     display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
     height: 7%;
     width: 100%; 
     padding: 0;
     margin: 0;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.4);
 }
 
 .NavBarDiv{
     width: 100%; 
     height: 100%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 footer{
-    position:absolute;
-    bottom: -5px;
+    position: absolute;
+    bottom: 0;
+    display: flexbox; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    text-align: center;
+    height: 1.5vh;
+    width: 100%; 
     padding: 0;
     margin: 0;
-    width:100%;
-    height:auto;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.4);
 }
 
 footer,button{
@@ -72,36 +83,50 @@ footer,button,#altButton:hover{
 #feedForm{
     display: flex;
     flex-direction: row;
+    background-color: rgba(0,0,0,0.2);
     padding: 0;
-    margin-top: 8vh;
+    margin-top: 4vh;
     margin-left: 10%;
     margin-right: 10%;
     height: 4vh;
+    border-style: solid;
+    border-color: white;
+    border-width: 3px;
 }
 
 #searchInput{
+    display: flexbox;
+    flex-grow: 1;
+    align-items: center;
     margin: 0;
+    padding: 0;
     padding-left: 5%;
-    color: black; 
-    background-image: url('./images/woodenPanel1.png'); 
-    background-color: rgba(155,155,155,.5);
+    color: black;
+    background-image: url('./images/woodenPanel1.png');
+    opacity: 0.8;
+    background-color: rgba(155,155,155,.3);
     background-blend-mode: color-dodge;
     background-size: contain; 
-    border-style: solid; 
+    border-style: none; 
     border-color: black; 
-    border-width: 1px; 
+    border-width: 1px;
     width: 70vh; 
     height: 100%;
 }
 
 #searchButton{
+    display: flexbox;
+    flex-grow: 1;
+    align-items: center;
     color: black;
-    margin: auto;
+    margin: 0;
     padding: 0;
     width: 20vh;
     height: 100%; 
     background-color: seashell; 
     font-family: Arial, Helvetica, sans-serif;
+    border-style: solid;
+    border-width: 1px;
 }
 
 #searchButton:active{
@@ -127,10 +152,9 @@ footer,button,#altButton:hover{
     align-content: space-between; 
     justify-content: space-between; 
 
-    background-image: url('./images/gradientBackground.jpg');
+    background-image: url('./images/background8.png');
     background-size: cover;
-    background-position: bottom;
-    background-color: rgba(0,255,255,0.1);
+    background-position: top;
     background-blend-mode: color-dodge;
 }
 
@@ -140,29 +164,31 @@ footer,button,#altButton:hover{
 }
 
 #col-1{
-    background-color: rgba(155, 155, 155, .1);
-    box-shadow: 4px 4px 12px black;
-    width: 279px;
+    /*background-color: rgba(155, 155, 155, .1);*/
+    box-shadow: 3px 0px 1px rgb(228, 228, 228);
+    width: 13%;
+    max-width: 294px;
     height: 100%;
     flex-direction: column;
+    flex-wrap: nowrap;
     padding-top: 0;
     z-index: 1;
 
-    /*background-image: url('./images/woodenPanel1.png');*/
+    background-image: url('./images/woodenPanel2.png');
+    background-color: rgba(55, 55, 55, .3);;
     opacity: 1;
-    background-blend-mode: color-dodge;
+    background-blend-mode: color;
     background-size: 22%;
 }
 
 #col-2{
-    background-color: rgba(155,155,155,0.2);
     width: auto;
     flex-grow: 1;
-    background-image: url('./images/background8.jpg'); 
-    background-position: top;
+    /*background-image: url('./images/background8.jpg'); */
+    /*background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: rgba(155,255,155,0.1);
+    background-color: rgba(155,255,155,0.1);*/
     background-blend-mode: color-dodge;
     overflow-y: hidden;
 }
@@ -170,6 +196,7 @@ footer,button,#altButton:hover{
 #FeedRoot{
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -186,35 +213,68 @@ footer,button,#altButton:hover{
 }
 
 #col-3{
-    /*background-image: url(./images/woodenPanel1.png);*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./images/woodenPanel2.png);
     background-size: 22%;
-    background-color:rgba(155, 155, 155, .7);
-    box-shadow: -4px -4px 12px black;
-    background-blend-mode: color-dodge;
+    background-color:rgba(55, 55, 55, .3);
+    box-shadow: -3px 0px 1px rgb(228, 228, 228);
+    background-blend-mode: color;
     width: 25%;
     z-index: 10;
 }
 
-/* Set the size of the div element that contains the map */
-#map {
-    height: 400px;
-    /* The height is 400 pixels */
+#col-3>h1{
+    display: flexbox;
+    color: white;
     width: 100%;
-    /* The width is the width of the web page */
+    flex-grow: 1;
+    font-size: 1.7vh;
+    max-height: 3%;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+/* Set the size of the div element that contains the map */
+#gmap_canvas {
+    height: 100%;
+    width: 100%;
+}
+
+.mapouter{
+    position: relative; 
+    text-align: right;
+    height: 30%; 
+    width: 90%;
+    border-style: double;
+    border-width: 5px;
+    border-color: white;
+}
+
+.gmap_canvas{
+    overflow: hidden;
+    background: none !important;
+    height: 100%;
+    width: 100%;
 }
 
 .LeftPanel{
     align-self: center;
+    color: white;
     padding-bottom: 25px;
     padding-top: 25px;
     margin-bottom: 0;
     margin-right: auto;
     padding-left: 22px; 
-    font-size: x-large;
+    font-size: 1.7vh;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     text-align: left;
+    flex-wrap: nowrap;
 
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
@@ -229,7 +289,7 @@ footer,button,#altButton:hover{
 }
 
 .LeftPanel:hover{
-    background-color: rgba(155,155,155,.5);
+    background-color: rgba(255,255,255,.5);
 }
 
 .LeftPanel:active{
@@ -237,14 +297,18 @@ footer,button,#altButton:hover{
 }
 
 #logout{
+    margin-top: auto;
+    padding-top: auto;
     padding-bottom: auto;
-    border-top: 2px solid black;
+    border-top: 2px solid rgb(228, 228, 228);
     /*background-image: url('./images/woodenPanel1.png');*/
     background-size: 22%;
     padding-left: 0;
     padding-right: 0;
-    font-size: x-large;
     text-align: center;
+
+    font-size: 1.7vh;
+    word-wrap: nowrap;
 }
 
 #logout:hover{
@@ -271,7 +335,7 @@ footer,button,#altButton:hover{
     max-width: 100%; 
     height: fit-content; 
     flex-direction: column;
-    border-bottom: 2px solid black; 
+    border-bottom: 2px solid white; 
     padding-bottom: 15px;
     /*background-image: url('./images/woodenPanel1.png');*/
     background-size: 22%;
@@ -296,7 +360,7 @@ footer,button,#altButton:hover{
     */
     -ms-user-select: none;
     user-select: none;
-    color: black;
+    color: white;
 
     font-family: Arial, Helvetica, sans-serif;
     align-self: center; 
@@ -305,7 +369,7 @@ footer,button,#altButton:hover{
     padding: 0;
     padding-top: 2%;
     margin: 0;
-    font-size: 150%;
+    font-size: 1.7vh;
     text-align: center;
     word-break: break-all;
 }
