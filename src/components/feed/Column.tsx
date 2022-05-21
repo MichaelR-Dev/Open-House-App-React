@@ -1,5 +1,5 @@
 import React from 'react';
-import { FeedRoot } from './Column-subheader';
+import { FeedRoot } from './Feed';
 import { ProfileCard } from './Profile';
 import avatar from '../../images/avatar.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -21,7 +21,7 @@ const fontAStyle={
   borderRadius: '25%'
 }
 
-const username : string = 'Density';
+const username : string = 'MichaelR-Dev';
 
 export interface ISideNavProps {}
 export function SideNav (props: ISideNavProps) {
@@ -72,9 +72,9 @@ export interface IColumn3Props {}
 export function Column3 (props: IColumn3Props) {
   return (
     <div className="column" id="col-3">
-      <h1>Local Recommended</h1>
+      <h1>Recommended</h1>
       <Map/>
-      <Recommended/>
+      <Trending/>
     </div>
   );
 }
@@ -90,26 +90,100 @@ export function Map (props: IMapProps){
   );
 }
 
-export type RecommendedProps = {}
+export type TrendingProps = {}
 
-export const Recommended = (props: RecommendedProps) => {
+export const Trending = (props: TrendingProps) => {
   return (
-    <div id='recomDiv'>
-      <RecomList id='recomList'/>
+    <div id='trendingDiv'>
+      <TrendingList/>
     </div>
   )
 }
 
-export type RecomListProps = {
-  id: string
+const trendEntries = [
+  {
+    id: 1,
+    author: 'MichaelR-Dev',
+    thumbnail: avatar,
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis sapien non porta imperdiet. Donec venenatis id ligula viverra pretium. Fusce venenatis lobortis rutrum. Proin velit leo vel.',
+    trendHref: '/posts/null',
+    price: 'Listed at $1,000'
+  },
+  {
+    id: 2,
+    author: 'MichaelR-Dev',
+    thumbnail: avatar,
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis sapien non porta imperdiet. Donec venenatis id ligula viverra pretium. Fusce venenatis lobortis rutrum. Proin velit leo vel.',
+    trendHref: '/posts/null',
+    price: 'Listed at $1,000'
+  },
+  {
+    id: 3,
+    author: 'MichaelR-Dev',
+    thumbnail: avatar,
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis sapien non porta imperdiet. Donec venenatis id ligula viverra pretium. Fusce venenatis lobortis rutrum. Proin velit leo vel.',
+    trendHref: '/posts/null',
+    price: 'Listed at $1,000'
+  },
+  {
+    id: 4,
+    author: 'MichaelR-Dev',
+    thumbnail: avatar,
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis sapien non porta imperdiet. Donec venenatis id ligula viverra pretium. Fusce venenatis lobortis rutrum. Proin velit leo vel.',
+    trendHref: '/posts/null',
+    price: 'Listed at $1,000'
+  },
+  {
+    id: 5,
+    author: 'MichaelR-Dev',
+    thumbnail: avatar,
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis sapien non porta imperdiet. Donec venenatis id ligula viverra pretium. Fusce venenatis lobortis rutrum. Proin velit leo vel.',
+    trendHref: '/posts/null',
+    price: 'Listed at $1,000'
+  },
+  {
+    id: 6,
+    author: 'MichaelR-Dev',
+    thumbnail: avatar,
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis sapien non porta imperdiet. Donec venenatis id ligula viverra pretium. Fusce venenatis lobortis rutrum. Proin velit leo vel.',
+    trendHref: '/posts/null',
+    price: 'Listed at $1,000'
+  }
+]
+
+export type TrendingListProps = {
 }
 
-export const RecomList = (props: RecomListProps) => {
+export const TrendingList = (props: TrendingListProps) => {
   return (
-    <ul id={props.id}>
-
+    <ul id='trendingList'>
+      {trendEntries.map((entry)=> (<TrendEntry author={`@${entry.author}`} thumbnail={entry.thumbnail} content={entry.content} trendHref={entry.trendHref} price={entry.price}></TrendEntry>))}
     </ul>
   );
+}
+
+export type TrendEntryProps = {
+  author: string,
+  thumbnail: string,
+  content: string,
+  trendHref: string,
+  price: string
+}
+
+export const TrendEntry = (props: TrendEntryProps) => {
+  return (
+    <aside className='trendEntry'>
+      <a href={props.trendHref}>
+        <img src={props.thumbnail}/>
+        <div className='trendEntryDiv'>
+          <h3>Property</h3>
+          <span>{props.content}</span>
+          <div><small>{props.author}</small>  <small>{props.price}</small></div>
+
+        </div>
+      </a>
+    </aside>
+  )
 }
 
 
